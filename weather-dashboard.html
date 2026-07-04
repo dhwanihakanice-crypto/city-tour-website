@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="weather-dashboard/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>🌤️ Weather Dashboard</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#current">Current Weather</a>
+                <a href="#forecast">Forecast</a>
+                <a href="#cities">Saved Cities</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container main-container">
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="cityInput" 
+                    placeholder="Search for a city..." 
+                    class="search-input"
+                >
+                <button id="searchBtn" class="search-btn">Search</button>
+            </div>
+            <div class="location-btn-wrapper">
+                <button id="locationBtn" class="location-btn">📍 Use My Location</button>
+            </div>
+        </div>
+
+        <!-- Current Weather Section -->
+        <section id="current" class="current-weather">
+            <div id="currentWeatherContent" class="weather-content">
+                <div class="loading">Loading weather data...</div>
+            </div>
+        </section>
+
+        <!-- Hourly Forecast Section -->
+        <section id="hourly" class="hourly-forecast">
+            <h2>Hourly Forecast</h2>
+            <div id="hourlyForecast" class="hourly-grid">
+                <!-- Hourly data will be loaded here -->
+            </div>
+        </section>
+
+        <!-- 5-Day Forecast Section -->
+        <section id="forecast" class="five-day-forecast">
+            <h2>5-Day Forecast</h2>
+            <div id="forecastContent" class="forecast-grid">
+                <!-- Forecast data will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Saved Cities Section -->
+        <section id="cities" class="saved-cities">
+            <h2>Saved Cities</h2>
+            <div id="savedCitiesContainer" class="saved-cities-grid">
+                <!-- Saved cities will be displayed here -->
+            </div>
+            <div id="noSavedCities" class="no-data-message">
+                No saved cities yet. Search for a city and click the save button!
+            </div>
+        </section>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Error</h2>
+            <p id="errorMessage"></p>
+            <button class="btn btn-primary" onclick="closeErrorModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Weather Dashboard. Data powered by OpenWeatherMap API</p>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#terms">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="weather-dashboard/app.js"></script>
+</body>
+</html>
